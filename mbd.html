@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Birthday Gift</title>
+  <style>
+	body, html {
+		margin: 0;
+		padding: 0;
+		height: 100%;
+		overflow: hidden;
+	}
+
+	* {
+		user-select: none;
+	}
+
+    body {
+		background-image: url("bg.png");
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		background-color: #FFBEBE;
+    }
+
+	@keyframes float {
+		0% {
+			margin-top: 0px;
+		}
+		50% {
+			margin-top: -15px;
+		}
+		100% {
+			margin-top: 0px;
+		}
+	}
+
+	.bow img{
+		cursor: pointer;
+		transition: transform 0.3s ease-in-out;
+    	transform-origin: center;
+		animation: float 2s ease-in-out infinite;
+	}
+		
+	.bow:hover img {
+		transform: scale(1.1);
+		margin-top: 0px;
+		animation-play-state: paused;
+	}
+
+	.hb-text {
+		/* display: none; */
+		opacity: 0;
+    	transition: opacity 0.8s ease-in-out;
+		pointer-events: none;
+	}
+
+	.show-hb {
+    	opacity: 1;
+	}
+
+	.grid-container {
+		display: grid;
+		grid-template-columns: 1fr 1fr; 
+		grid-template-rows: 1fr 1fr;
+		height: 100vh;
+		width: 100vw;
+		font-family: 'Courier New', Courier, monospace;
+		font-size: large;
+		opacity: 0;
+    	transition: opacity 1.5s ease-in-out;
+    	pointer-events: none;
+	}
+
+	.reveal-wishes {
+		opacity: 1;
+    	pointer-events: auto;
+	}
+
+	.communist {
+		align-items: flex-start;
+		justify-content: flex-start;
+	}
+
+	.communist p {
+		color: brown;
+		font-weight: bold;
+		padding-left: 101px;
+		padding-top: 70px;
+	}
+
+	.communist button {
+		margin-left: 101px;
+		margin-top: 25.5px;
+		color: white;
+		font-family: 'Courier New', Courier, monospace;
+		font-weight: bold;
+		border: none;
+		border-radius: 5px;
+		background: url("red.png");
+		background-color: red;
+		padding: 15px;
+		cursor: pointer;
+	}
+
+	.fascist {
+		align-items: flex-start;
+		justify-content: flex-end;
+	}
+
+	.fascist p {
+		color: rgb(59, 40, 205);
+		font-weight: bolder;
+		padding-left: 70px;
+		padding-top: 70px;
+	}
+
+	.fascist button {
+		margin-left: 470px;
+		margin-top: 10px;
+		color: white;
+		font-family: 'Courier New', Courier, monospace;
+		font-weight: bold;
+		border: none;
+		border-radius: 5px;
+		background: url("blue.png");
+		background-color: blue;
+		padding: 15px;
+		cursor: pointer;
+	}
+
+	.anarchist {
+		align-items: flex-end;
+		justify-content: flex-start;
+	}
+
+	.anarchist p {
+		color: rgb(55, 76, 34);
+		font-weight: bold;
+		padding-left: 101px;
+		padding-top: 70px;
+	}
+
+	.anarchist button {
+		margin-left: 101px;
+		/* margin-top: 5px; */
+		color: white;
+		font-family: 'Courier New', Courier, monospace;
+		font-weight: bold;
+		border: none;
+		border-radius: 5px;
+		background: url("green.png");
+		background-color: darkgreen;
+		padding: 15px;
+		cursor: pointer;
+	}
+
+	.capitalist {
+		align-items: flex-end;
+		justify-content: flex-end;
+	}
+	
+	.capitalist p {
+		font-weight: bold;
+		color: rgb(147, 110, 17);
+		padding-left: 70px;
+		padding-top: 70px;
+	}
+
+	.capitalist button {
+		margin-left: 470px;
+		margin-top: 20px;
+		color: white;
+		font-family: 'Courier New', Courier, monospace;
+		font-weight: bold;
+		border: none;
+		border-radius: 5px;
+		background: url("purple.png");
+		background-color: purple;
+		padding: 15px;
+		cursor: pointer;
+	}
+
+
+  </style>
+</head>
+<body>
+	<div class="grid-container">
+		<!-- Wish good life -->
+		<section class="communist">
+			<p>
+				Hardship comes and goes.<br>
+				Wishing you a really good year forward.<br>
+				May this one be your best yet.
+			</p>
+			<!-- <button>Click us!</button> -->
+		</section>
+
+		<!-- Wish good travels/year -->
+		<section class="fascist">
+			<p>
+				People like you are hard to come by.<br>
+				Never change and keep being yourself.<br>
+				Thank you for being the best mom. <br>
+				With you for all of eternity.
+			</p>
+			<!-- <button>Click me!</button> -->
+		</section>
+
+		<!-- Wish good health -->
+		<section class="anarchist">
+			<p>
+				I've never seen anyone as strong as you. <br>
+				Praying to Allah for your eternal wellbeing. <br>
+				Let's keep being healthy and confident. <br>
+				After all, health is wealth.
+			</p>
+			<!-- <button>Click this!</button> -->
+		</section>
+
+		<!-- Wish good prosperity -->
+		<section class="capitalist">
+			<p>
+				Health may be wealth, <br>
+				but a lot in life comes with money. <br>
+				May you have an abundance of prosperity. <br>
+			</p>
+			<!-- <button>Click it!</button> -->
+		</section>
+	</div>
+
+	<!-- Confetti party and happy birthday message pop-up -->
+	<section class="centerist">
+		<div class="bow" id="bow">
+			<img src="bow.png" alt="bow" height="150px" style="position: fixed; top: 35.4%; left: 42.8%;">
+		</div>
+		<div class="hb-text">
+			<img src="hb-text.png" alt="happy birthday text" height="300px" style="position: fixed; top: 20%; left: 35%;">
+		</div>
+	</section>
+
+	<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+	<script>
+		document.getElementById("bow").addEventListener("click", function() {
+			const textElement = document.querySelector(".hb-text");
+			const gridElement = document.querySelector(".grid-container");
+			// textElement.style.display = "block";
+			textElement.classList.add("show-hb");
+
+			// setTimeout(function() {
+			// 	textElement.style.display = "none";
+			// }, 4000);
+			setTimeout(function() {
+				textElement.classList.remove("show-hb");
+			}, 4000);
+
+			setTimeout(function() {
+				gridElement.classList.add("reveal-wishes");
+			}, 4000);
+
+			confetti({
+				particleCount: 150,
+				spread: 70,
+				origin: { y: 0.6 }
+			});
+			var duration = 15 * 1000;
+			var animationEnd = Date.now() + duration;
+			var defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 999 };
+
+			function randomInRange(min, max) {
+				return Math.random() * (max - min) + min;
+			}
+
+			var interval = setInterval(function() {
+			var timeLeft = animationEnd - Date.now();
+
+			if (timeLeft <= 0) {
+				return clearInterval(interval);
+			}
+
+			var particleCount = 50 * (timeLeft / duration);
+		
+			confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } });
+			confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } });
+			}, 250);
+		});
+	</script>
+</body>
+</html>
